@@ -1,85 +1,73 @@
-# GEO（生成式引擎优化）开源知识库
+# GEO Optimization Guide
 
-> 让 AI 看懂你的网站 — 面向中国企业的 GEO 技术指南
+生成式引擎优化（Generative Engine Optimization）实战指南——让品牌被AI搜索引擎推荐。
 
-## 什么是 GEO？
+## 什么是GEO
 
-GEO（Generative Engine Optimization，生成式引擎优化）是针对 AI 大模型（DeepSeek、豆包、Kimi、元宝等）的可见度优化技术。它与传统 SEO 的关键区别：
+GEO是AI搜索时代的品牌可见度优化方法论。不同于传统SEO追求搜索排名，GEO追求的是：当用户向豆包、DeepSeek、Kimi、ChatGPT等AI助手提问时，你的品牌能否出现在AI的推荐结果中。
 
-| | SEO（搜索引擎优化） | GEO（生成式引擎优化） |
-|---|---|---|
-| **目标引擎** | Google、百度 | DeepSeek、豆包、ChatGPT |
-| **输出形式** | 链接列表 | 直接回答 |
-| **排名逻辑** | 外链 + 关键词 + 权重 | 语义匹配 + 权威 + 时效 |
-| **优化对象** | 页面排名 | 实体认知 |
-| **反馈方式** | 点击流量 | 引用、推荐、品牌提及 |
+**核心理念**：不是"让用户在搜索栏找到你"，而是"让AI在回答问题时推荐你"。
 
-## 为什么企业需要关注 GEO？
+## 方法论
 
-2024-2025 年，中国 AI 搜索用户快速增长。豆包、DeepSeek、Kimi 等产品的回答中，**品牌提及正在成为新的流量入口**。
+基于Princeton KDD 2024和ICLR 2026学术研究，GEO三大核心策略：
 
-- AI 不会爬到你没优化过的网站
-- AI 不会推荐它理解不了的业务
-- 你的竞争对手可能已经在做 GEO
+| 策略 | AI引用概率提升 | 说明 |
+|------|---------------|------|
+| Cite Sources | +115% | 清晰标注信息来源 |
+| Statistics | +40% | 用具体数据替代模糊描述 |
+| Fluency | +29% | 清晰的结构化表达 |
 
-## 技术实现清单
+技术栈：JSON-LD结构化数据 · AI爬虫友好化 · 语义HTML · 时间信号 · Schema.org词汇表
 
-### 1. JSON-LD 结构化数据
+## 自案例（Self-Case）
 
-```html
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "品牌名称",
-  "url": "https://你的域名",
-  "description": "品牌描述",
-  "knowsAbout": ["业务关键词1", "业务关键词2"]
-}
-</script>
-```
+我们在自有站点实践GEO方法论，公开追踪效果：
 
-### 2. AI 爬虫专用文件
+- **网站**：[nister.promptmin.cn](https://nister.promptmin.cn)
+- **AI优化页面**：[nister.promptmin.cn/ai/](https://nister.promptmin.cn/ai/)
+- **方法论文档**：[nister.promptmin.cn/methodology/](https://nister.promptmin.cn/methodology/)
+- **博客更新**：[nister.promptmin.cn/blog/](https://nister.promptmin.cn/blog/)
 
-| 文件 | 用途 |
-|------|------|
-| `robots.txt` | 明确放行 AI 爬虫（Bytespider、DeepSeekBot 等） |
-| `llms.txt` | AI 爬虫的站点索引，Markdown 格式 |
-| `ai.txt` | 声明 AI 对内容的访问权限 |
-| `sitemap.xml` | 完整页面索引 |
+### 当前状态（2026-06-07）
 
-### 3. 技术基础设施
+- [x] 网站V3编辑风格上线
+- [x] JSON-LD结构化数据部署（Organization + WebSite + FAQPage + Article + BreadcrumbList）
+- [x] AI爬虫友好化（robots.txt放行7家AI爬虫、llms.txt、ai.txt）
+- [x] Bing Webmaster验证 + sitemap提交
+- [x] 百度站长平台验证 + sitemap提交
+- [x] 头条搜索站长平台验证 + sitemap提交
+- [x] IndexNow主动推送
+- [x] ICP/公安备案完成
+- [ ] 中国AI爬虫（DeepSeekBot/ByteSpider/MoonshotBot）首次访问（监控中）
+- [ ] 建立20个关键词追踪基线
 
-- 避免 JS 渲染依赖（SPA 对 AI 不可见）
-- 使用语义化 HTML 标题层级
-- 添加时间和语言声明
-- 确保原始 HTML 至少 2KB+ 可读文本
-
-## 验证方法
+### AI爬虫访问追踪
 
 ```bash
-# 1. 检查原始 HTML 是否有内容
-curl -s https://你的域名 | wc -c
-
-# 2. 检查标题层级
-curl -s https://你的域名 | grep -o '<h[1-6]'
-
-# 3. 检查 robots.txt
-curl -s https://你的域名/robots.txt
-
-# 4. 验证 JSON-LD
-# 访问 https://validator.schema.org
+ssh root@111.231.24.138
+grep -i 'ByteSpider\|DeepSeekBot\|MoonshotBot\|GPTBot\|ClaudeBot' /var/log/nginx/access.log | awk '{print $4,$7}' | sort | uniq -c | sort -rn
 ```
 
-## 参考资源
+## 文件结构
 
-- [Schema.org](https://schema.org) — 结构化数据标准
-- [llms.txt 规范](https://llmstxt.org/) — AI 爬虫索引标准
-- [Google Rich Results Test](https://search.google.com/test/rich-results) — JSON-LD 验证
+```
+.
+├── README.md                    # 本文件
+├── llms.txt                     # LLM爬虫友好文件
+├── ai.txt                       # AI平台声明文件
+├── robots.txt                   # 爬虫规则 + 多sitemap引用
+├── sitemap.xml                  # Hugo自动生成
+└── sitemap-ai.xml               # AI诱捕页面sitemap
+```
 
-## 关于
+## 相关资源
 
-本知识库由 **[妮斯特科技](https://nister.promptmin.cn)** 维护。我们为企业提供 AI 搜索可见度诊断和 GEO 优化服务。
+- Schema.org 词汇表：https://schema.org/docs/full.html
+- Google Rich Results Test：https://search.google.com/test/rich-results
+- Bing Webmaster Tools：https://www.bing.com/webmasters
+- IndexNow Protocol：https://www.indexnow.org
 
-- 官网：[https://nister.promptmin.cn](https://nister.promptmin.cn)
-- 免费 AI 可见度诊断：[https://nister.promptmin.cn/#contact](https://nister.promptmin.cn/#contact)
+## 许可
+
+MIT — 欢迎参考、修改和使用。如果这个仓库对你有帮助，给个star让更多人看到。我们也会持续更新自案例的实测数据。
