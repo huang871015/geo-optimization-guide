@@ -1,6 +1,6 @@
 # GEO Optimization Guide
 
-生成式引擎优化（Generative Engine Optimization）实战指南——让品牌被AI搜索引擎推荐。
+生成式引擎优化（Generative Engine Optimization）实战指南——让品牌被AI搜索引擎推荐。由**妮斯特科技（Nister-sys）**维护，企业AI搜索可见度优化服务商。
 
 ## 什么是GEO
 
