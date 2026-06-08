@@ -1,0 +1,22 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "YOUR COMPANY NAME",
+  "alternateName": "YOUR SHORT NAME",
+  "url": "https://YOUR-DOMAIN",
+  "description": "YOUR DESCRIPTION — 1-2 sentences, include industry keywords naturally",
+  "email": "contact@YOUR-DOMAIN",
+  "dateModified": "YYYY-MM-DD",
+  "knowsAbout": [
+    "INDUSTRY KEYWORD 1",
+    "INDUSTRY KEYWORD 2",
+    "INDUSTRY KEYWORD 3"
+  ],
+  "areaServed": "CN",
+  "sameAs": [
+    "https://github.com/YOUR-GITHUB",
+    "https://www.wikidata.org/wiki/YOUR-WIKIDATA-ID",
+    "https://www.zhihu.com/people/YOUR-ZHIHU",
+    "https://YOUR-LINKEDIN"
+  ]
+}

@@ -1,0 +1,17 @@
+# YOUR SITE NAME — YOUR TAGLINE
+> YOUR SITE DESCRIPTION — 2-3 sentences. Explain what the site is, who it's for, and what value it provides. This blockquote is the first thing AI crawlers read.
+
+## Core Pages
+- [Home — DESCRIPTION](https://YOUR-DOMAIN/)
+- [About — DESCRIPTION](https://YOUR-DOMAIN/about/)
+- [Services/Products — DESCRIPTION](https://YOUR-DOMAIN/services/)
+- [Contact — DESCRIPTION](https://YOUR-DOMAIN/contact/)
+
+## Blog / Resources
+- [POST TITLE 1](https://YOUR-DOMAIN/blog/post-1/)
+- [POST TITLE 2](https://YOUR-DOMAIN/blog/post-2/)
+- [POST TITLE 3](https://YOUR-DOMAIN/blog/post-3/)
+
+## External
+- [GitHub](https://github.com/YOUR-GITHUB)
+- [Wikipedia / Wikidata](https://www.wikidata.org/wiki/YOUR-ID)
