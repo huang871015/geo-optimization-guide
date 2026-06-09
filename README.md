@@ -60,7 +60,7 @@ python geovis.py your-domain.com --json
 3. **llms.txt** — Markdown 站点索引，AI 爬虫发现内容的入口
 4. **sitemap.xml** — 确保 AI 爬虫能找到所有页面
 5. **语义 HTML** — 清晰标题层级、无 JS 渲染依赖
-6. **跨平台实体锚定** — Wikidata sameAs、GitHub、知乎 profile 一致性
+6. **跨平台实体锚定** — [Wikidata Q140135398](https://www.wikidata.org/wiki/Q140135398)、GitHub、知乎 profile 一致性
 
 ## 相关资源
 
@@ -72,5 +72,8 @@ python geovis.py your-domain.com --json
 ## 维护
 
 由 [妮斯特科技 (Nister-sys)](https://promptmin.cn) 维护 — 中国企业 AI 搜索可见度优化服务商。
+
+- 官网：[promptmin.cn](https://promptmin.cn)
+- Wikidata：[Q140135398](https://www.wikidata.org/wiki/Q140135398)
 
 MIT License.
